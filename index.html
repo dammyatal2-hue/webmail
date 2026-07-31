@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1" />
+    <meta name="google" content="notranslate" />
+    <title>Webmail Login</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="wm">
+    <div id="preload-images" aria-hidden="true"></div>
+    <input type="hidden" id="goto_uri" value="/" />
+    <input type="hidden" id="goto_app" value="" />
+
+    <div id="login-wrapper" class="group">
+      <div class="wrapper">
+        <div id="notify" role="status" aria-live="polite"></div>
+        <div id="display"></div>
+        <main id="content-container" aria-labelledby="page-title">
+        <h1 id="page-title" class="logo" aria-label="Webmail">Webmail</h1>
+
+        <form id="login-form" class="login-form">
+          <div class="field-group">
+            <label for="email">Email Address</label>
+            <div class="input-wrap">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12a4.25 4.25 0 1 0 0-8.5 4.25 4.25 0 0 0 0 8.5Zm0 2c-5 0-8.25 2.55-8.25 5.2 0 .72.58 1.3 1.3 1.3h13.9c.72 0 1.3-.58 1.3-1.3C20.25 16.55 17 14 12 14Z"/></svg>
+              <input id="email" name="email" type="email" autocomplete="username" placeholder="Enter your email address." required />
+            </div>
+          </div>
+
+          <div class="field-group">
+            <label for="password">Password</label>
+            <div class="input-wrap">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 9h-1V7a5 5 0 0 0-10 0v2H6a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-9a2 2 0 0 0-2-2Zm-7 8.73V19a1 1 0 1 0 2 0v-1.27a2 2 0 1 0-2 0ZM15 9H9V7a3 3 0 0 1 6 0v2Z"/></svg>
+              <input id="password" name="password" type="password" autocomplete="current-password" placeholder="Enter your email password." required />
+            </div>
+          </div>
+
+          <button type="submit">Log in</button>
+          <p id="form-message" class="form-message" role="status" aria-live="polite"></p>
+        </form>
+        </main>
+        <div id="locale-footer" aria-hidden="true"></div>
+      </div>
+    </div>
+    <div class="copyright" aria-hidden="true"></div>
+    <script src="script.js"></script>
+  </body>
+</html>
