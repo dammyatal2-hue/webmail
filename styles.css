@@ -23,6 +23,7 @@ body { margin: 0; }
 
 #login-wrapper {
   min-height: 100vh;
+  min-height: 100dvh;
   display: grid;
   place-items: center;
   padding: 24px 20px;
@@ -134,11 +135,76 @@ button:active { transform: translateY(1px); }
 }
 
 @media (max-width: 600px) {
+  #login-wrapper {
+    padding: max(24px, env(safe-area-inset-top)) 18px max(24px, env(safe-area-inset-bottom));
+  }
+
+  .wrapper,
+  #content-container {
+    width: min(100%, 440px);
+  }
+
   .wrapper { transform: none; }
-  .logo { margin-bottom: 46px; font-size: 58px; letter-spacing: -5px; }
-  label { font-size: 20px; }
-  .field-group + .field-group { margin-top: 38px; }
-  .input-wrap, button { height: 58px; }
-  .input-wrap svg { width: 26px; height: 26px; margin-right: 16px; }
-  input, button { font-size: 17px; }
+
+  .logo {
+    margin-bottom: 48px;
+    font-size: clamp(50px, 16vw, 70px);
+    letter-spacing: clamp(-6px, -1.2vw, -4px);
+    transform: skewX(-8deg) scaleX(1.02);
+  }
+
+  label {
+    margin: 0 0 11px 2px;
+    font-size: 19px;
+  }
+
+  .field-group + .field-group { margin-top: 36px; }
+
+  .input-wrap,
+  button { height: 56px; }
+
+  .input-wrap svg {
+    width: 25px;
+    height: 25px;
+    margin: 0 15px 0 14px;
+  }
+
+  input {
+    padding-right: 12px;
+    font-size: 16px;
+  }
+
+  button {
+    margin-top: 25px;
+    font-size: 18px;
+  }
+
+  .form-message { font-size: 12px; }
+}
+
+@media (max-width: 360px) {
+  #login-wrapper { padding-inline: 14px; }
+  .logo { margin-bottom: 40px; font-size: 49px; }
+  .field-group + .field-group { margin-top: 30px; }
+  .input-wrap svg { margin-right: 11px; }
+  input { font-size: 15px; }
+}
+
+@media (max-height: 600px) and (orientation: landscape) {
+  #login-wrapper {
+    place-items: start center;
+    padding-block: 24px 32px;
+  }
+
+  .logo {
+    margin-bottom: 28px;
+    font-size: 52px;
+  }
+
+  .field-group + .field-group { margin-top: 24px; }
+
+  .input-wrap,
+  button { height: 50px; }
+
+  button { margin-top: 20px; }
 }
